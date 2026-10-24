@@ -14,5 +14,10 @@ resposta = model.invoke(
     "Olá, como você está e o que você é capaz de fazer?"
 )
 
-print("----- RESPOSTA AIMessage: -----")
+print("--------RESPOSTA AIMessage:---------")
 print(resposta)
+print("-------------------------------------")
+
+print("--------RESPOSTA Somente Texto:------")
+print(resposta.content)
+print("-------------------------------------")

@@ -22,7 +22,13 @@ while True:
     conversa.append(HumanMessage(content=entrada))
 
     resultado = model.invoke(conversa)
-    resposta = resultado.content
+
+    resposta = "".join(
+        bloco["text"]
+        for bloco in resultado.content
+        if isinstance(bloco, dict) and bloco.get("type") == "text"
+    )
+    
     conversa.append(AIMessage(content=resposta))
 
     print(f"Resposta IA: {resposta}")

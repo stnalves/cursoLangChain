@@ -57,7 +57,7 @@ def extract_info_node(state: AgentState):
 
 def generate_itinerary_node(state: AgentState):
     """Gera o roteiro estruturado em formato JSON."""
-    llm = ChatGoogleGenerativeAI(model="gemini-1.5-flash", temperature=0.7)
+    llm = ChatGoogleGenerativeAI(model="gemini-3.8-flash", temperature=0.7)
     structured_llm = llm.with_structured_output(ItineraryModel)
     
     # Previne erros caso interests venha nulo do LLM
