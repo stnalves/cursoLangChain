@@ -18,6 +18,12 @@ print("--------RESPOSTA AIMessage:---------")
 print(resposta)
 print("-------------------------------------")
 
+resultado = "".join(
+    bloco["text"]
+    for bloco in resposta.content
+    if isinstance(bloco, dict) and bloco.get("type") == "text"
+)
+
 print("--------RESPOSTA Somente Texto:------")
-print(resposta.content)
+print(resultado)
 print("-------------------------------------")
